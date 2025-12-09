@@ -65,7 +65,7 @@ jupyter notebook 02_char_rnn_karpathy.ipynb
 |---|-------|----------|--------------|
 | 16 | Relational Reasoning | ✅ `16_relational_reasoning.ipynb` | Relation networks, Pairwise functions |
 | 17 | **Variational Lossy Autoencoder** | ✅ `17_variational_autoencoder.ipynb` | VAE, ELBO, Reparameterization trick |
-| 18 | **Relational RNNs** | ✅ `18_relational_rnn.ipynb` | Relational memory, Multi-head self-attention, 3.7% better than LSTM |
+| 18 | **Relational RNNs** | ✅ `18_relational_rnn.ipynb` | Relational memory, Multi-head self-attention in RNNs, Forward pass demo |
 | 19 | The Coffee Automaton | ✅ `01_complexity_dynamics.ipynb` | Irreversibility, Mixing, Complexity |
 | 20 | **Neural Turing Machines** | ✅ `20_neural_turing_machine.ipynb` | External memory, Differentiable addressing |
 | 21 | Deep Speech 2 (CTC) | ✅ `21_ctc_speech.ipynb` | CTC loss, Speech recognition |
@@ -164,8 +164,9 @@ These implementations cover the most influential papers and demonstrate core dee
 14. **`18_relational_rnn.ipynb`** - Relational RNN
     - LSTM with relational memory
     - Multi-head self-attention across memory slots
-    - 3.7% improvement over LSTM baseline
+    - Architecture demonstration (forward pass)
     - Sequential reasoning tasks
+    - Note: Full training requires PyTorch/TensorFlow
 
 15. **`20_neural_turing_machine.ipynb`** - Memory-Augmented Networks
     - Content & location addressing
@@ -407,7 +408,7 @@ Educational use. See individual papers for original research citations.
 - ✅ **Paper 12**: Graph Neural Networks (message passing)
 - ✅ **Paper 14**: Bahdanau Attention (original attention)
 - ✅ **Paper 15**: Identity Mappings ResNet (pre-activation)
-- ✅ **Paper 18**: Relational RNNs (relational memory, 3.7% improvement) **NEW!**
+- ✅ **Paper 18**: Relational RNNs (relational memory, architecture demo)
 - ✅ **Paper 16**: Relational Reasoning (relation networks)
 - ✅ **Paper 21**: Deep Speech 2 (CTC loss)
 - ✅ **Paper 27**: Multi-Token Prediction (2-3x sample efficiency)
