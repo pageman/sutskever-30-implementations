@@ -2,15 +2,15 @@
 
 **Comprehensive toy implementations of the 30 foundational papers recommended by Ilya Sutskever**
 
-[![Implementations](https://img.shields.io/badge/Implementations-26%2F30-brightgreen)](https://github.com/pageman/sutskever-30-implementations)
-[![Coverage](https://img.shields.io/badge/Coverage-87%25-blue)](https://github.com/pageman/sutskever-30-implementations)
+[![Implementations](https://img.shields.io/badge/Implementations-27%2F30-brightgreen)](https://github.com/pageman/sutskever-30-implementations)
+[![Coverage](https://img.shields.io/badge/Coverage-90%25-blue)](https://github.com/pageman/sutskever-30-implementations)
 [![Python](https://img.shields.io/badge/Python-NumPy%20Only-yellow)](https://numpy.org/)
 
 ## Overview
 
 This repository contains detailed, educational implementations of the papers from Ilya Sutskever's famous reading list - the collection he told John Carmack would teach you "90% of what matters" in deep learning.
 
-**Progress: 26/30 papers (87%) implemented!**
+**Progress: 27/30 papers (90%) implemented!**
 
 Each implementation:
 - ✅ Uses only NumPy (no deep learning frameworks) for educational clarity
@@ -51,7 +51,7 @@ jupyter notebook 02_char_rnn_karpathy.ipynb
 | 6 | Pointer Networks | ✅ `06_pointer_networks.ipynb` | Attention as pointer, Combinatorial problems |
 | 7 | ImageNet/AlexNet | ✅ `07_alexnet_cnn.ipynb` | CNNs, Convolution, Data augmentation |
 | 8 | Order Matters: Seq2Seq for Sets | ✅ `08_seq2seq_for_sets.ipynb` | Set encoding, Permutation invariance, Attention pooling |
-| 9 | GPipe | [Planned] | Pipeline parallelism, Model parallelism |
+| 9 | GPipe | ✅ `09_gpipe.ipynb` | Pipeline parallelism, Micro-batching, Re-materialization |
 | 10 | Deep Residual Learning (ResNet) | ✅ `10_resnet_deep_residual.ipynb` | Skip connections, Gradient highways |
 | 11 | Dilated Convolutions | ✅ `11_dilated_convolutions.ipynb` | Receptive fields, Multi-scale |
 | 12 | Neural Message Passing (GNNs) | ✅ `12_graph_neural_networks.ipynb` | Graph networks, Message passing |
@@ -157,18 +157,26 @@ These implementations cover the most influential papers and demonstrate core dee
     - Sorting and set operations
     - Comparison: order-sensitive vs order-invariant
 
+13. **`09_gpipe.ipynb`** - GPipe Pipeline Parallelism
+    - Model partitioning across devices
+    - Micro-batching for pipeline utilization
+    - F-then-B schedule (forward all, backward all)
+    - Re-materialization (gradient checkpointing)
+    - Bubble time analysis
+    - Training models larger than single-device memory
+
 #### Advanced Topics
-13. **`12_graph_neural_networks.ipynb`** - Graph Neural Networks
+14. **`12_graph_neural_networks.ipynb`** - Graph Neural Networks
     - Message passing framework
     - Graph convolutions
     - Molecular property prediction
 
-14. **`16_relational_reasoning.ipynb`** - Relation Networks
+15. **`16_relational_reasoning.ipynb`** - Relation Networks
     - Pairwise relational reasoning
     - Visual QA
     - Permutation invariance
 
-15. **`18_relational_rnn.ipynb`** - Relational RNN
+16. **`18_relational_rnn.ipynb`** - Relational RNN
     - LSTM with relational memory
     - Multi-head self-attention across memory slots
     - Architecture demonstration (forward pass)
@@ -177,51 +185,51 @@ These implementations cover the most influential papers and demonstrate core dee
     - Complete gradient computation for all components
     - Gradient checking with numerical verification
 
-16. **`20_neural_turing_machine.ipynb`** - Memory-Augmented Networks
+17. **`20_neural_turing_machine.ipynb`** - Memory-Augmented Networks
     - Content & location addressing
     - Differentiable read/write
     - External memory
 
-17. **`21_ctc_speech.ipynb`** - CTC Loss & Speech Recognition
+18. **`21_ctc_speech.ipynb`** - CTC Loss & Speech Recognition
     - Connectionist Temporal Classification
     - Alignment-free training
     - Forward algorithm
 
 #### Generative Models
-18. **`17_variational_autoencoder.ipynb`** - VAE
+19. **`17_variational_autoencoder.ipynb`** - VAE
     - Generative modeling
     - ELBO loss
     - Latent space visualization
 
 #### Modern Applications
-19. **`27_multi_token_prediction.ipynb`** - Multi-Token Prediction
+20. **`27_multi_token_prediction.ipynb`** - Multi-Token Prediction
     - Predict multiple future tokens
     - 2-3x sample efficiency
     - Speculative decoding
     - Faster training & inference
 
-20. **`28_dense_passage_retrieval.ipynb`** - Dense Retrieval
+21. **`28_dense_passage_retrieval.ipynb`** - Dense Retrieval
     - Dual encoder architecture
     - In-batch negatives
     - Semantic search
 
-21. **`29_rag.ipynb`** - Retrieval-Augmented Generation
+22. **`29_rag.ipynb`** - Retrieval-Augmented Generation
     - RAG-Sequence vs RAG-Token
     - Combining retrieval + generation
     - Knowledge-grounded outputs
 
-22. **`30_lost_in_middle.ipynb`** - Long Context Analysis
+23. **`30_lost_in_middle.ipynb`** - Long Context Analysis
     - Position bias in LLMs
     - U-shaped performance curve
     - Document ordering strategies
 
 #### Scaling & Theory
-23. **`22_scaling_laws.ipynb`** - Scaling Laws
+24. **`22_scaling_laws.ipynb`** - Scaling Laws
     - Power law relationships
     - Compute-optimal training
     - Performance prediction
 
-24. **`23_mdl_principle.ipynb`** - Minimum Description Length
+25. **`23_mdl_principle.ipynb`** - Minimum Description Length
     - Information-theoretic model selection
     - Compression = Understanding
     - MDL vs AIC/BIC comparison
@@ -229,7 +237,7 @@ These implementations cover the most influential papers and demonstrate core dee
     - MDL-based pruning (connects to Paper 5)
     - Kolmogorov complexity preview
 
-25. **`25_kolmogorov_complexity.ipynb`** - Kolmogorov Complexity
+26. **`25_kolmogorov_complexity.ipynb`** - Kolmogorov Complexity
     - K(x) = shortest program generating x
     - Randomness = Incompressibility
     - Algorithmic probability (Solomonoff)
@@ -238,7 +246,7 @@ These implementations cover the most influential papers and demonstrate core dee
     - Occam's Razor formalized
     - Theoretical foundation for ML
 
-26. **`01_complexity_dynamics.ipynb`** - Complexity & Entropy
+27. **`01_complexity_dynamics.ipynb`** - Complexity & Entropy
     - Cellular automata (Rule 30)
     - Entropy growth
     - Irreversibility
@@ -259,6 +267,7 @@ sutskever-30-implementations/
 ├── 06_pointer_networks.ipynb           # Attention pointers
 ├── 07_alexnet_cnn.ipynb               # CNNs & AlexNet
 ├── 08_seq2seq_for_sets.ipynb          # Permutation-invariant sets
+├── 09_gpipe.ipynb                     # Pipeline parallelism
 ├── 10_resnet_deep_residual.ipynb      # Residual connections
 ├── 11_dilated_convolutions.ipynb       # Multi-scale convolutions
 ├── 12_graph_neural_networks.ipynb      # Message passing GNNs
@@ -279,7 +288,7 @@ sutskever-30-implementations/
 └── 30_lost_in_middle.ipynb            # Long context analysis
 ```
 
-**26 out of 30 papers implemented! (87% complete)**
+**27 out of 30 papers implemented! (90% complete)**
 
 ## Learning Path
 
@@ -295,24 +304,25 @@ sutskever-30-implementations/
 7. **Bahdanau Attention** (`14_bahdanau_attention.ipynb`) - Attention basics
 8. **Pointer Networks** (`06_pointer_networks.ipynb`) - Attention as selection
 9. **Seq2Seq for Sets** (`08_seq2seq_for_sets.ipynb`) - Permutation invariance
-10. **Transformers** (`13_attention_is_all_you_need.ipynb`) - Modern architecture
-11. **Dilated Convolutions** (`11_dilated_convolutions.ipynb`) - Receptive fields
-12. **Scaling Laws** (`22_scaling_laws.ipynb`) - Understanding scale
+10. **GPipe** (`09_gpipe.ipynb`) - Pipeline parallelism for large models
+11. **Transformers** (`13_attention_is_all_you_need.ipynb`) - Modern architecture
+12. **Dilated Convolutions** (`11_dilated_convolutions.ipynb`) - Receptive fields
+13. **Scaling Laws** (`22_scaling_laws.ipynb`) - Understanding scale
 
 ### Advanced Track
-13. **Pre-activation ResNet** (`15_identity_mappings_resnet.ipynb`) - Architecture details
-14. **Graph Neural Networks** (`12_graph_neural_networks.ipynb`) - Graph learning
-15. **Relation Networks** (`16_relational_reasoning.ipynb`) - Relational reasoning
-16. **Neural Turing Machines** (`20_neural_turing_machine.ipynb`) - External memory
-17. **CTC Loss** (`21_ctc_speech.ipynb`) - Speech recognition
-18. **Dense Retrieval** (`28_dense_passage_retrieval.ipynb`) - Semantic search
-19. **RAG** (`29_rag.ipynb`) - Retrieval-augmented generation
-20. **Lost in the Middle** (`30_lost_in_middle.ipynb`) - Long context analysis
+14. **Pre-activation ResNet** (`15_identity_mappings_resnet.ipynb`) - Architecture details
+15. **Graph Neural Networks** (`12_graph_neural_networks.ipynb`) - Graph learning
+16. **Relation Networks** (`16_relational_reasoning.ipynb`) - Relational reasoning
+17. **Neural Turing Machines** (`20_neural_turing_machine.ipynb`) - External memory
+18. **CTC Loss** (`21_ctc_speech.ipynb`) - Speech recognition
+19. **Dense Retrieval** (`28_dense_passage_retrieval.ipynb`) - Semantic search
+20. **RAG** (`29_rag.ipynb`) - Retrieval-augmented generation
+21. **Lost in the Middle** (`30_lost_in_middle.ipynb`) - Long context analysis
 
 ### Theory & Fundamentals
-21. **MDL Principle** (`23_mdl_principle.ipynb`) - Model selection via compression
-22. **Kolmogorov Complexity** (`25_kolmogorov_complexity.ipynb`) - Randomness & information
-23. **Complexity Dynamics** (`01_complexity_dynamics.ipynb`) - Entropy & emergence
+22. **MDL Principle** (`23_mdl_principle.ipynb`) - Model selection via compression
+23. **Kolmogorov Complexity** (`25_kolmogorov_complexity.ipynb`) - Randomness & information
+24. **Complexity Dynamics** (`01_complexity_dynamics.ipynb`) - Entropy & emergence
 
 ## Key Insights from the Sutskever 30
 
@@ -432,11 +442,12 @@ Educational use. See individual papers for original research citations.
 
 ## Latest Additions (December 2025)
 
-### Recently Implemented (17 new papers!)
+### Recently Implemented (18 new papers!)
 - ✅ **Paper 4**: RNN Regularization (variational dropout)
 - ✅ **Paper 5**: Neural Network Pruning (MDL, 90%+ sparsity)
 - ✅ **Paper 7**: AlexNet (CNNs from scratch)
 - ✅ **Paper 8**: Seq2Seq for Sets (permutation invariance, attention pooling)
+- ✅ **Paper 9**: GPipe (pipeline parallelism, micro-batching, re-materialization)
 - ✅ **Paper 11**: Dilated Convolutions (multi-scale)
 - ✅ **Paper 12**: Graph Neural Networks (message passing)
 - ✅ **Paper 14**: Bahdanau Attention (original attention)
